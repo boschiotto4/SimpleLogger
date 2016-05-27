@@ -16,13 +16,19 @@ namespace SimpleLogger
     public class Logger
     {
         #region GLOBALS
-        public enum LEVEL {INFO, CRITICAL, ERROR, WARNING, DEBUG }
+        // Message LEVEL
+        public enum LEVEL { CRITICAL, ERROR, WARNING, INFO, VERBOSE}
 
+        // Message ID
         int LOG_ID = 0;
 
+        // For console logging
         private static TraceSource mySource = new TraceSource("LOG");
+        
         private object m_lock = new object();
         String fileName = "log.log";
+
+        LEVEL level = LEVEL.VERBOSE;
         #endregion
 
         /// <summary>-------
@@ -38,7 +44,6 @@ namespace SimpleLogger
             mySource.Switch = new SourceSwitch("SourceSwitch", "Verbose");
         }
 
-        // Log method
         /// <summary>-------
         /// <para>The log method to write a message to the log file</para>
         /// </summary>
@@ -50,16 +55,36 @@ namespace SimpleLogger
                 message = "";
             lock(m_lock)
             {
-                LOG_ID++;
-                mySource.TraceEvent(getFromTypeAnalyzer(level), LOG_ID, message);
-                using (StreamWriter w = File.AppendText(fileName))
+                if (canLog(level))
                 {
-                    w.WriteLine(getLine(level, LOG_ID, message));
+                    LOG_ID++;
+                    mySource.TraceEvent(getFromTypeAnalyzer(level), LOG_ID, message);
+                    using (StreamWriter w = File.AppendText(fileName))
+                    {
+                        w.WriteLine(getLine(level, LOG_ID, message));
+                    }
                 }
             }
         }
 
+        /// <summary>-------
+        /// <para>Used to set the level of logging</para>
+        /// </summary>
+        /// <param name="level">The level of logging: CRITICAL &lt; ERROR &lt; WARNING &lt; INFO &lt; VERBOSE</param>
+        public void setLoggingLevel(LEVEL topLevel)
+        {
+            level = topLevel;
+        }
+
         #region HELPERS
+        private bool canLog(LEVEL lev)
+        {
+            // Get the level of lev
+            if (((int)lev) <= ((int)level))
+                return true;
+            return false;
+        }
+
         private string getLine(LEVEL type, int p, string message)
         {
             String t = "";
@@ -75,7 +100,7 @@ namespace SimpleLogger
             if (type == LEVEL.WARNING)
                 t = "Warning";
 
-            if (type == LEVEL.DEBUG)
+            if (type == LEVEL.VERBOSE)
                 t = "Verbose";
 
             if (p > 99990)
@@ -102,7 +127,7 @@ namespace SimpleLogger
             if (type == LEVEL.WARNING)
                 t = TraceEventType.Warning;
 
-            if (type == LEVEL.DEBUG)
+            if (type == LEVEL.VERBOSE)
                 t = TraceEventType.Verbose;
 
             return t;
