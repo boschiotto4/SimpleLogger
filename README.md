@@ -8,8 +8,9 @@ In your class include the logger:
     
     using SimpleLogger;
     
-    // Create the logger
-    Logger logger = new Logger(); // Will be create a file named "log.log"
+    // Create the logger without a file name (Will be create a file named "log.log")...
+    Logger logger = new Logger();
+    // ...or specify a filename
     Logger logger = new Logger("HartManager.log");
     
     // Use it
