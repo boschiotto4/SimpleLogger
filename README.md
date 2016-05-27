@@ -1,11 +1,11 @@
 # SimpleLogger
 A very basilar logger for .NET. It is possible to choose a filename for the log and the level of logging.
 
-Installation: get the SimpleLogger.dll and add a reference to it.
-In your class include the logger:
+Installation: extract the archive SimpleLogger_binary.zip and put the SimpleLogger.dll in your project then add a reference to it.
 
 #C Sharp Example
-    
+In your class include the logger:
+
     using SimpleLogger;
     
     // Create the logger without a file name (Will be create a file named "log.log")...
