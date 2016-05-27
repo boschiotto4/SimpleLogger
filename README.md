@@ -4,26 +4,26 @@ A very basilar logger for .NET. It is possible to choose a filename for the log 
 Installation: extract the archive SimpleLogger_binary.zip and put the SimpleLogger.dll in your project then add a reference to it.
 
 ###C Sharp Example
-**In your class include the logger:**
+**1. In your class include the logger:**
 
     using SimpleLogger;
     
-  **Create the logger without a file name (Will be create a file named "log.log")...**
+  **2. Create the logger without a file name (Will be create a file named "log.log")...**
   
     Logger logger = new Logger();
     
-  **...or specify a filename**
+  **...or specify a filename:**
     
     Logger logger = new Logger("myManager.log");
     
-  **OPTIONAL: Set the log level (Remember: CRITICAL < ERROR < WARNING < INFO < VERBOSE)**
+  **3. OPTIONAL: Set the log level (Remember: CRITICAL < ERROR < WARNING < INFO < VERBOSE)**
   **so if you set the level to WARNING, you will have in the log the CRITICAL, ERROR and WARNING**
   **if you set the level to CRITICAL, you will have only CRITICAL in the log**
-  **Default value is VERBOSE**
+  **Default value is VERBOSE.**
   
     logger.setLoggingLevel(Logger.LEVEL.INFO);
 
-  **Use it**
+  **4. Use it:**
   
     logger.log(Logger.LEVEL.ERROR, e.StackTrace);
 
