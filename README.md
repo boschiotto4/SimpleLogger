@@ -3,7 +3,7 @@ A very basilar logger for .NET. It is possible to choose a filename for the log 
 
 Installation: extract the archive SimpleLogger_binary.zip and put the SimpleLogger.dll in your project then add a reference to it.
 
-#C Sharp Example
+###C Sharp Example
 In your class include the logger:
 
     using SimpleLogger;
