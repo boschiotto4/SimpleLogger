@@ -15,3 +15,11 @@ In your class include the logger:
     
     // Use it
     logger.log(Logger.LEVEL.ERROR, e.StackTrace);
+
+####OUTPUT EXAMPLE
+00001|2016-05-27|12:17:34:7126|Information|Arbitration Start
+00002|2016-05-27|12:17:34:7686|Information|setTRASMIT_REQUEST at 16
+00003|2016-05-27|12:17:35:0326|Verbose|8 13
+00004|2016-05-27|12:17:35:1796|Verbose|13 14
+00005|2016-05-27|12:17:35:4066|Information|ENABLE.Indicate - ACK | STX | OACK | USING
+00006|2016-05-27|12:17:35:8016|Verbose|14 16
