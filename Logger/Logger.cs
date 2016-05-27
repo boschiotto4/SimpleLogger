@@ -46,15 +46,15 @@ namespace SimpleLogger
         /// <param name="message">is the text of message</param>
         public void log(LEVEL level, String message) 
         {
-            // Add the timestamp to the message
-            String timeStamp = DateTime.Now.ToString("yyyy-MM-dd|HH:mm:ss:ffff");
-            message = timeStamp + "|" + message;
+            if (message == null)
+                message = "";
             lock(m_lock)
             {
-                mySource.TraceEvent(getFromTypeAnalyzer(level), LOG_ID++, message);
+                LOG_ID++;
+                mySource.TraceEvent(getFromTypeAnalyzer(level), LOG_ID, message);
                 using (StreamWriter w = File.AppendText(fileName))
                 {
-                    w.WriteLine(getLine(level, LOG_ID++, message));
+                    w.WriteLine(getLine(level, LOG_ID, message));
                 }
             }
         }
@@ -80,7 +80,11 @@ namespace SimpleLogger
 
             if (p > 99990)
                 p = 0;
-            return t + "|" + p.ToString("00000") + "|" + message;
+
+            // Add the timestamp to the log
+            String timeStamp = DateTime.Now.ToString("yyyy-MM-dd|HH:mm:ss:ffff");
+
+            return p.ToString("00000") + "|" + timeStamp + "|" + t + "|" + message;
         }
 
         private TraceEventType getFromTypeAnalyzer(LEVEL type)
