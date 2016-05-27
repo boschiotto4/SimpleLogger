@@ -20,6 +20,7 @@ Installation: extract the archive SimpleLogger_binary.zip and put the SimpleLogg
   **so if you set the level to WARNING, you will have in the log the CRITICAL, ERROR and WARNING**
   **if you set the level to CRITICAL, you will have only CRITICAL in the log**
   **Default value is VERBOSE**
+  
     logger.setLoggingLevel(Logger.LEVEL.INFO);
 
   **Use it**
