@@ -6,22 +6,23 @@ Installation: extract the archive SimpleLogger_binary.zip and put the SimpleLogg
 ###C Sharp Example
 In your class include the logger:
 
-    using SimpleLogger;
+    **using SimpleLogger;**
     
     // Create the logger without a file name (Will be create a file named "log.log")...
-    Logger logger = new Logger();
+    '''csharp
+    **Logger logger = new Logger();**
     
     // ...or specify a filename
-    Logger logger = new Logger("HartManager.log");
+    **Logger logger = new Logger("HartManager.log");**
     
     // OPTIONAL: Set the log level (Remember: CRITICAL < ERROR < WARNING < INFO < VERBOSE)
     // so if you set the level to WARNING, you will have in the log the CRITICAL, ERROR and WARNING
     // if you set the level to CRITICAL, you will have only CRITICAL in the log
     // Default value is VERBOSE
-    logger.setLoggingLevel(Logger.LEVEL.INFO);
+    **logger.setLoggingLevel(Logger.LEVEL.INFO);**
 
     // Use it
-    logger.log(Logger.LEVEL.ERROR, e.StackTrace);
+    **logger.log(Logger.LEVEL.ERROR, e.StackTrace);**
 
 ####OUTPUT EXAMPLE
     00001|2016-05-27|12:17:34:7126|Information|Arbitration Start
