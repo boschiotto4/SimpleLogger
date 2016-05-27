@@ -1,5 +1,5 @@
 # SimpleLogger
-A very basilar logger for .NET. It is possible to choose a filename for the log and the level of logging.
+A very basilar logger for .NET. It is possible to choose a filename for the log and the level of logging message.
 
 Installation: extract the archive SimpleLogger_binary.zip and put the SimpleLogger.dll in your project then add a reference to it.
 
