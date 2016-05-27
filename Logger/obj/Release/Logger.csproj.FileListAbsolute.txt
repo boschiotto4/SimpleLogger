@@ -1,5 +1,5 @@
-C:\WORK\Progetti\ValcomHartServer\Logger\bin\Release\Logger.dll.config
-C:\WORK\Progetti\ValcomHartServer\Logger\bin\Release\Logger.dll
-C:\WORK\Progetti\ValcomHartServer\Logger\bin\Release\Logger.pdb
-C:\WORK\Progetti\ValcomHartServer\Logger\obj\Release\Logger.dll
-C:\WORK\Progetti\ValcomHartServer\Logger\obj\Release\Logger.pdb
+C:\WORK\Progetti\ValcomHartServer\Logger\bin\Release\SimpleLogger.dll.config
+C:\WORK\Progetti\ValcomHartServer\Logger\bin\Release\SimpleLogger.dll
+C:\WORK\Progetti\ValcomHartServer\Logger\bin\Release\SimpleLogger.pdb
+C:\WORK\Progetti\ValcomHartServer\Logger\obj\Release\SimpleLogger.dll
+C:\WORK\Progetti\ValcomHartServer\Logger\obj\Release\SimpleLogger.pdb
