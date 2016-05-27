@@ -12,7 +12,7 @@ In your class include the logger:
    **Logger logger = new Logger();**
     
     // ...or specify a filename
-   **Logger logger = new Logger("HartManager.log");**
+   **Logger logger = new Logger("myManager.log");**
     
     // OPTIONAL: Set the log level (Remember: CRITICAL < ERROR < WARNING < INFO < VERBOSE)
     // so if you set the level to WARNING, you will have in the log the CRITICAL, ERROR and WARNING
