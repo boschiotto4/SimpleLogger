@@ -14,6 +14,12 @@ In your class include the logger:
     // ...or specify a filename
     Logger logger = new Logger("HartManager.log");
     
+    // OPTIONAL: Set the log level (Remember: CRITICAL < ERROR < WARNING < INFO < VERBOSE)
+    // so if you set the level to WARNING, you will have in the log the CRITICAL, ERROR and WARNING
+    // if you set the level to CRITICAL, you will have only CRITICAL in the log
+    // Default value is VERBOSE
+    logger.setLoggingLevel(Logger.LEVEL.INFO);
+
     // Use it
     logger.log(Logger.LEVEL.ERROR, e.StackTrace);
 
