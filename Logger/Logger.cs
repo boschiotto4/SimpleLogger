@@ -66,12 +66,16 @@ namespace SimpleLogger
                 }
             }
         }
-
+        
+        public void log(string p)
+        {
+            log(LEVEL.VERBOSE, p);
+        }
         /// <summary>-------
         /// <para>Used to set the level of logging</para>
         /// </summary>
         /// <param name="level">The level of logging: CRITICAL &lt; ERROR &lt; WARNING &lt; INFO &lt; VERBOSE</param>
-        public void setLoggingLevel(LEVEL topLevel)
+        public void setLevel(LEVEL topLevel)
         {
             level = topLevel;
         }
@@ -133,5 +137,7 @@ namespace SimpleLogger
             return t;
         }
         #endregion
+
+        
     }
 }

@@ -1,0 +1,6 @@
+C:\WORK\Progetti\ValcomHartServer\Logger\bin\Debug\SimpleLogger.dll.config
+C:\WORK\Progetti\ValcomHartServer\Logger\bin\Debug\SimpleLogger.dll
+C:\WORK\Progetti\ValcomHartServer\Logger\bin\Debug\SimpleLogger.pdb
+C:\WORK\Progetti\ValcomHartServer\Logger\obj\Debug\SimpleLogger.dll
+C:\WORK\Progetti\ValcomHartServer\Logger\obj\Debug\SimpleLogger.pdb
+C:\WORK\Progetti\ValcomHartServer\Logger\obj\Debug\SimpleLogger.csprojResolveAssemblyReference.cache
