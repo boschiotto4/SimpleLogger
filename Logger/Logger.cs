@@ -25,6 +25,7 @@ namespace SimpleLogger
         // For console logging
         private static TraceSource mySource = new TraceSource("LOG");
         
+        private bool log_enable = true;
         private object m_lock = new object();
         String fileName = "log.log";
 
@@ -57,20 +58,30 @@ namespace SimpleLogger
             {
                 if (canLog(level))
                 {
-                    LOG_ID++;
-                    mySource.TraceEvent(getFromTypeAnalyzer(level), LOG_ID, message);
-                    using (StreamWriter w = File.AppendText(fileName))
+                    if (log_enable)
                     {
-                        w.WriteLine(getLine(level, LOG_ID, message));
+                        LOG_ID++;
+                        if (LOG_ID == 99999)
+                            LOG_ID = 0;
+                        mySource.TraceEvent(getFromTypeAnalyzer(level), LOG_ID, message);
+                        using (StreamWriter w = File.AppendText(fileName))
+                        {
+                            w.WriteLine(getLine(level, LOG_ID, message));
+                        }
                     }
                 }
             }
         }
-        
+
+        /// <summary>-------
+        /// <para>The log method to write a message to the log file - Verbose Level setted by default</para>
+        /// </summary>
+        /// <param name="message">is the text of message</param>
         public void log(string p)
         {
             log(LEVEL.VERBOSE, p);
         }
+
         /// <summary>-------
         /// <para>Used to set the level of logging</para>
         /// </summary>
@@ -136,8 +147,17 @@ namespace SimpleLogger
 
             return t;
         }
+
+        public void disableLog()
+        {
+            log_enable = false;
+        }
+
+        public void enableLog()
+        {
+            log_enable = true;
+        }
         #endregion
 
-        
     }
 }
