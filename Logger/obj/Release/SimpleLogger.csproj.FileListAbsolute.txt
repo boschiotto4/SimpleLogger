@@ -4,3 +4,4 @@ C:\WORK\Progetti\ValcomHartServer\Logger\bin\Release\SimpleLogger.pdb
 C:\WORK\Progetti\ValcomHartServer\Logger\obj\Release\SimpleLogger.csprojResolveAssemblyReference.cache
 C:\WORK\Progetti\ValcomHartServer\Logger\obj\Release\SimpleLogger.dll
 C:\WORK\Progetti\ValcomHartServer\Logger\obj\Release\SimpleLogger.pdb
+
